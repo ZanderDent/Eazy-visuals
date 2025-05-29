@@ -102,6 +102,7 @@ body {
     flex-direction: column;
     cursor: pointer;
     gap: 4px;
+    margin-right: 10px;
 }
 
 .hamburger .bar {
