@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - EaZy Visuals{% endblock %}
+
+{% block extra_css %}
+<style>
+    .contact-container {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .contact-info {
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 15px;
+        margin-bottom: 2rem;
+        text-align: left;
+    }
+
+    .contact-info h2 {
+        color: #2c3e50;
+        margin-bottom: 1.5rem;
+    }
+
+    .contact-info p {
+        margin-bottom: 1rem;
+        color: #34495e;
+        line-height: 1.6;
+    }
+
+    .contact-info a {
+        color: #3498db;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+        color: #2980b9;
+    }
+
+    .contact-icon {
+        margin-right: 10px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 style="text-align: center; margin-bottom: 2rem; color: #2c3e50;">Get in Touch</h1>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p><span class="contact-icon">👤</span> <strong>Name:</strong> Edmund (Xuhao) Zhang</p>
+            <p><span class="contact-icon">📍</span> <strong>Location:</strong> Vancouver, British Columbia, Canada</p>
+            <p><span class="contact-icon">💼</span> <strong>Roles:</strong> Videographer @ Roundball BC, Sports Videographer @ _eazyvisuals_</p>
+            <p><span class="contact-icon">🎓</span> <strong>Education:</strong> BA Psychology Student @ University of British Columbia (2022-2026)</p>
+            <p><span class="contact-icon">🔗</span> <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/edmund-zhang-business/" target="_blank">linkedin.com/in/edmund-zhang-business/</a></p>
+            <p><span class="contact-icon">📸</span> <strong>Instagram:</strong> <a href="https://www.instagram.com/_eazyvisuals_/" target="_blank">@_eazyvisuals_</a></p>
+            <p style="margin-top: 2rem;">For booking inquiries, please visit the <a href="{{ url_for('booking') }}">Booking Page</a>.</p>
+        </div>
+    </div>
+</div>
+{% endblock %} 
