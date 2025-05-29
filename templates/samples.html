@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+
+{% block title %}Video Samples - Eazy Visuals{% endblock %}
+
+{% block extra_css %}
+<style>
+    .samples-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .video-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    .video-info {
+        padding: 1.5rem;
+    }
+
+    .video-title {
+        font-size: 1.3rem;
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+    }
+
+    .video-description {
+        color: #7f8c8d;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .video-tags {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .video-tag {
+        background: #f0f2f5;
+        color: #2c3e50;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+    }
+
+    .category-section {
+        margin-bottom: 3rem;
+    }
+
+    .category-title {
+        color: #2c3e50;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #3498db;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 style="text-align: center; margin-bottom: 2rem; color: #2c3e50;">Video Samples</h1>
+
+    <div class="category-section">
+        <h2 class="category-title">Basketball Highlights</h2>
+        <div class="samples-grid">
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/placeholder1" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Player Highlight Reel</h3>
+                    <p class="video-description">A compilation of the best plays from a high school basketball game.</p>
+                    <div class="video-tags">
+                        <span class="video-tag">Highlights</span>
+                        <span class="video-tag">Basketball</span>
+                        <span class="video-tag">3 minutes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/placeholder2" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Team Season Highlights</h3>
+                    <p class="video-description">Season compilation featuring the best moments from multiple games.</p>
+                    <div class="video-tags">
+                        <span class="video-tag">Team</span>
+                        <span class="video-tag">Season</span>
+                        <span class="video-tag">5 minutes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2 class="category-title">Creative Content</h2>
+        <div class="samples-grid">
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/placeholder3" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Brand Promotional Video</h3>
+                    <p class="video-description">A dynamic promotional video for a local business.</p>
+                    <div class="video-tags">
+                        <span class="video-tag">Promo</span>
+                        <span class="video-tag">Brand</span>
+                        <span class="video-tag">1 minute</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/placeholder4" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Social Media Reel</h3>
+                    <p class="video-description">Engaging short-form content for Instagram/TikTok.</p>
+                    <div class="video-tags">
+                        <span class="video-tag">Social Media</span>
+                        <span class="video-tag">Reel</span>
+                        <span class="video-tag">30 seconds</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2 class="category-title">Documentary Work</h2>
+        <div class="samples-grid">
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/placeholder5" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Community Story</h3>
+                    <p class="video-description">A documentary about local community initiatives.</p>
+                    <div class="video-tags">
+                        <span class="video-tag">Documentary</span>
+                        <span class="video-tag">Community</span>
+                        <span class="video-tag">15 minutes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

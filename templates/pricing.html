@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amateur Videographer Pricing Chart 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .equipment-info {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .equipment-title {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .equipment-list {
+            color: #7f8c8d;
+            font-size: 1rem;
+        }
+        
+        .section-header {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 25px;
+            margin: 30px 0 20px 0;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .section-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+        
+        .section-header p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+        
+        .section-header.basketball {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+        }
+        
+        .section-header.creative {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 2px solid #f8f9fa;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-color: #3498db;
+        }
+        
+        .card-header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-right: 80px;
+        }
+        
+        .card-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .price-range {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #e74c3c;
+            margin-bottom: 5px;
+        }
+        
+        .price-type {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        .services-list {
+            list-style: none;
+        }
+        
+        .services-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ecf0f1;
+            color: #34495e;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .services-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .basketball .services-list li::before {
+            content: '🏀';
+            position: absolute;
+            left: 0;
+            font-size: 0.9rem;
+        }
+        
+        .creative .services-list li::before {
+            content: '📸';
+            position: absolute;
+            left: 0;
+            font-size: 0.9rem;
+        }
+        
+        .hourly .services-list li::before {
+            content: '⏱️';
+            position: absolute;
+            left: 0;
+            font-size: 0.9rem;
+        }
+        
+        .experience-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #3498db;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .additional-services {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+        
+        .additional-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .service-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        .service-name {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .service-price {
+            color: #e74c3c;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .notes {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+        
+        .notes h3 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+        
+        .notes ul {
+            color: #856404;
+            padding-left: 20px;
+        }
+        
+        .notes li {
+            margin-bottom: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Amateur Videographer & Content Creator</h1>
+            <p>Professional Pricing • 2025 Rates</p>
+        </div>
+        
+        <div class="content">
+            <!-- Equipment Info -->
+            <div class="equipment-info">
+                <h3 class="equipment-title">My Equipment Setup</h3>
+                <div class="equipment-list">
+                    Sony A7III Camera • External Microphone • Basic Lighting
+                </div>
+            </div>
+            
+            <!-- Hourly Services -->
+            <div class="section-header">
+                <h2>Hourly Services</h2>
+                <p>Flexible rates for custom projects</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card hourly">
+                    <div class="experience-badge">1 Year Exp</div>
+                    <div class="card-header">
+                        <h3 class="card-title">Shooting Only</h3>
+                        <div class="price-range">$35-45</div>
+                        <div class="price-type">per hour</div>
+                    </div>
+                    <ul class="services-list">
+                        <li>Game/event filming</li>
+                        <li>Multiple angles coverage</li>
+                        <li>Basic setup & breakdown</li>
+                        <li>Raw footage delivery</li>
+                        <li>No editing included</li>
+                    </ul>
+                </div>
+                
+                <div class="pricing-card hourly">
+                    <div class="experience-badge">1 Year Exp</div>
+                    <div class="card-header">
+                        <h3 class="card-title">Editing Only</h3>
+                        <div class="price-range">$25-35</div>
+                        <div class="price-type">per hour</div>
+                    </div>
+                    <ul class="services-list">
+                        <li>Video editing & cutting</li>
+                        <li>Color correction</li>
+                        <li>Music & transitions</li>
+                        <li>Basic graphics/titles</li>
+                        <li>Client provides footage</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Basketball Services -->
+            <div class="section-header basketball">
+                <h2>Basketball Videography</h2>
+                <p>Game highlights, player reels & season packages</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card basketball">
+                    <div class="experience-badge">1 Year Exp</div>
+                    <div class="card-header">
+                        <h3 class="card-title">Single Player Highlight</h3>
+                        <div class="price-range">$75-100</div>
+                        <div class="price-type">one game</div>
+                    </div>
+                    <ul class="services-list">
+                        <li>Focus on one specific player</li>
+                        <li>Player highlight reel (3-5 min)</li>
+                        <li>1 revision included</li>
+                        <li>Digital delivery (MP4)</li>
+                        <li>1-2 week turnaround</li>
+                    </ul>
+                </div>
+                
+                <div class="pricing-card basketball">
+                    <div class="experience-badge">1 Year Exp</div>
+                    <div class="card-header">
+                        <h3 class="card-title">Team Highlight</h3>
+                        <div class="price-range">$100-150</div>
+                        <div class="price-type">one game</div>
+                    </div>
+                    <ul class="services-list">
+                        <li>Full team coverage</li>
+                        <li>Team highlight reel (4-6 min)</li>
+                        <li>Best plays from all players</li>
+                        <li>1 revision included</li>
+                        <li>1-2 week turnaround</li>
+                    </ul>
+                </div>
+                
+                <div class="pricing-card basketball">
+                    <div class="experience-badge">1 Year Exp</div>
+                    <div class="card-header">
+                        <h3 class="card-title">Multi-Game Player Package</h3>
+                        <div class="price-range">$250-400</div>
+                        <div class="price-type">3-5 games</div>
+                    </div>
+                    <ul class="services-list">
+                        <li>Multiple game attendance</li>
+                        <li>Focus on specific player</li>
+                        <li>Compilation highlight reel (5-8 min)</li>
+                        <li>Music & custom graphics</li>
+                        <li>2 revisions included</li>
+                        <li>Social media ready format</li>
+                    </ul>
+                </div>
+                
+                <div class="pricing-card basketball">
+                    <div class="experience-badge">1 Year Exp</div>
+                    <div class="card-header">
+                        <h3 class="card-title">Team Season Package</h3>
+                        <div class="price-range">$400-600</div>
+                        <div class="price-type">5-8 games</div>
+                    </div>
+                    <ul class="services-list">
+                        <li>Multiple game coverage</li>
+                        <li>Season highlight compilation</li>
+                        <li>Individual player highlights</li>
+                        <li>Team intro/outro graphics</li>
+                        <li>Bulk pricing discount</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Creative & Content Services -->
+            <div class="section-header creative">
+                <h2>Creative & Content Services</h2>
+                <p>Brand content, documentaries & promotional material</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card creative">
+                    <div class="experience-badge">1 Year Exp</div>
+                    <div class="card-header">
+                        <h3 class="card-title">Promotional Photoshoot</h3>
+                        <div class="price-range">$75-150</div>
+                        <div class="price-type">per shoot</div>
+                    </div>
+                    <ul class="services-list">
+                        <li>1-2 hour session</li>
+                        <li>Product/clothing photography</li>
+                        <li>Basic lighting setup</li>
+                        <li>15-25 edited photos</li>
+                        <li>Color correction included</li>
+                        <li>Digital delivery</li>
+                    </ul>
+                </div>
+                
+                <div class="pricing-card creative">
+                    <div class="experience-badge">1 Year Exp</div>
+                    <div class="card-header">
+                        <h3 class="card-title">Promotional Video</h3>
+                        <div class="price-range">$80-180</div>
+                        <div class="price-type">per video</div>
+                    </div>
+                    <ul class="services-list">
+                        <li>Single promotional video</li>
+                        <li>30-60 second final product</li>
+                        <li>Trendy editing style</li>
+                        <li>Music & basic effects</li>
+                        <li>1 revision included</li>
+                        <li>5-7 day turnaround</li>
+                    </ul>
+                </div>
+                
+                <div class="pricing-card creative">
+                    <div class="experience-badge">1 Year Exp</div>
+                    <div class="card-header">
+                        <h3 class="card-title">Social Media Reel</h3>
+                        <div class="price-range">$40-100</div>
+                        <div class="price-type">per reel</div>
+                    </div>
+                    <ul class="services-list">
+                        <li>Single short-form video</li>
+                        <li>15-30 second reel</li>
+                        <li>Platform-specific editing</li>
+                        <li>Trending music/effects</li>
+                        <li>Quick turnaround (2-3 days)</li>
+                        <li>Instagram/TikTok ready</li>
+                    </ul>
+                </div>
+                
+                <div class="pricing-card creative">
+                    <div class="experience-badge">1 Year Exp</div>
+                    <div class="card-header">
+                        <h3 class="card-title">Documentary Project</h3>
+                        <div class="price-range">$500-900</div>
+                        <div class="price-type">custom project</div>
+                    </div>
+                    <ul class="services-list">
+                        <li>Multiple interview sessions</li>
+                        <li>Archival footage integration</li>
+                        <li>Professional documentary editing</li>
+                        <li>10-20 minute final product</li>
+                        <li>2-3 revisions included</li>
+                        <li>3-4 week turnaround</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Additional Services -->
+            <div class="additional-services">
+                <h3 class="additional-title">Add-On Services</h3>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <div class="service-name">Rush Delivery</div>
+                        <div class="service-price">+$50</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-name">Extra Revisions</div>
+                        <div class="service-price">$25 each</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-name">Raw Footage/Photos</div>
+                        <div class="service-price">+$30</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-name">Custom Music</div>
+                        <div class="service-price">+$40</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-name">Extended Content</div>
+                        <div class="service-price">+$20/min</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-name">Travel Fee</div>
+                        <div class="service-price">$0.50/mile</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Important Notes -->
+            <div class="notes">
+                <h3>📝 Important Notes</h3>
+                <ul>
+                    <li><strong>Payment:</strong> 50% deposit required, balance due upon delivery</li>
+                    <li><strong>Cancellation:</strong> 48-hour notice required for rescheduling</li>
+                    <li><strong>Delivery:</strong> All content delivered via Google Drive or similar platform</li>
+                    <li><strong>Usage Rights:</strong> Client receives full usage rights for intended purpose</li>
+                    <li><strong>Location Access:</strong> Client responsible for ensuring filming permission at venues</li>
+                    <li><strong>Weather/Conditions:</strong> Indoor shoots preferred; outdoor shoots subject to conditions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

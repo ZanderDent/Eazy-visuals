@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}Services - Eazy Visuals{% endblock %}
+
+{% block extra_css %}
+<style>
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .service-card {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .service-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #3498db;
+    }
+
+    .service-title {
+        font-size: 1.5rem;
+        color: #2c3e50;
+        margin-bottom: 1rem;
+    }
+
+    .service-description {
+        color: #7f8c8d;
+        margin-bottom: 1.5rem;
+    }
+
+    .service-features {
+        list-style: none;
+    }
+
+    .service-features li {
+        margin-bottom: 0.5rem;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .service-features li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #2ecc71;
+    }
+
+    .cta-button {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        background: #3498db;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+        background: #2980b9;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 style="text-align: center; margin-bottom: 2rem; color: #2c3e50;">Our Services</h1>
+    
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="service-icon">🎥</div>
+            <h2 class="service-title">Basketball Videography</h2>
+            <p class="service-description">Professional game coverage and highlight reels for players and teams.</p>
+            <ul class="service-features">
+                <li>Single player highlights</li>
+                <li>Team game coverage</li>
+                <li>Season packages</li>
+                <li>Multi-angle filming</li>
+            </ul>
+            <a href="/booking" class="cta-button">Book Now</a>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">📸</div>
+            <h2 class="service-title">Creative Content</h2>
+            <p class="service-description">High-quality promotional content for your brand or personal use.</p>
+            <ul class="service-features">
+                <li>Promotional videos</li>
+                <li>Social media content</li>
+                <li>Product photography</li>
+                <li>Brand storytelling</li>
+            </ul>
+            <a href="/booking" class="cta-button">Book Now</a>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🎬</div>
+            <h2 class="service-title">Documentary Projects</h2>
+            <p class="service-description">Professional documentary filming and editing services.</p>
+            <ul class="service-features">
+                <li>Interview sessions</li>
+                <li>Archival footage integration</li>
+                <li>Professional editing</li>
+                <li>Custom music scoring</li>
+            </ul>
+            <a href="/booking" class="cta-button">Book Now</a>
+        </div>
+    </div>
+</div>
+{% endblock %} 

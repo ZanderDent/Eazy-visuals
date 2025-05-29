@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Book Now - Eazy Visuals{% endblock %}
+
+{% block extra_css %}
+<style>
+    .booking-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .booking-info {
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 15px;
+        margin-bottom: 2rem;
+    }
+
+    .booking-info h2 {
+        color: #2c3e50;
+        margin-bottom: 1rem;
+    }
+
+    .booking-info ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .booking-info li {
+        margin-bottom: 0.5rem;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .booking-info li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #2ecc71;
+    }
+
+    .calendly-container {
+        min-height: 700px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 style="text-align: center; margin-bottom: 2rem; color: #2c3e50;">Book Your Session</h1>
+
+    <div class="booking-container">
+        <div class="booking-info">
+            <h2>Booking Information</h2>
+            <ul>
+                <li>50% deposit required to secure your booking</li>
+                <li>48-hour notice required for rescheduling</li>
+                <li>All content delivered via Google Drive</li>
+                <li>Client receives full usage rights</li>
+            </ul>
+        </div>
+
+        <div class="calendly-container">
+            <!-- Calendly inline widget begin -->
+            <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR_CALENDLY_USERNAME" style="min-width:320px;height:700px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            <!-- Calendly inline widget end -->
+        </div>
+    </div>
+</div>
+{% endblock %} 
