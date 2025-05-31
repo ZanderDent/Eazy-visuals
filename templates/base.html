@@ -44,6 +44,16 @@
         {% block content %}{% endblock %}
     </div>
 
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="contact-info">
+                <p><span class="contact-icon">🔗</span> <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/edmund-zhang-business/" target="_blank">linkedin.com/in/edmund-zhang-business/</a></p>
+                <p><span class="contact-icon">📸</span> <strong>Instagram:</strong> <a href="https://www.instagram.com/_eazyvisuals_/" target="_blank">@_eazyvisuals_</a></p>
+            </div>
+            <p class="copyright">© 2025 EaZy Visuals. All rights reserved.</p>
+        </div>
+    </footer>
+
     {% block extra_js %}
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -58,4 +68,219 @@
     </script>
     {% endblock %}
 </body>
-</html> 
+<style>
+    :root {
+        --color-background-dark: #1a1a1a; /* Matte black */
+        --color-primary: #6b48ff; /* Electric purple */
+        --color-highlight: #b0b7c0; /* Steel gray */
+        --color-text-light: #d1d5db; /* Light gray */
+        --color-shadow-dark: rgba(0, 0, 0, 0.7); /* Darker shadow */
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        color: var(--color-text-light);
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        background: var(--color-background-dark);
+        padding: 1rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px var(--color-shadow-dark);
+        transition: background 0.3s ease;
+    }
+
+    .navbar.scrolled {
+        background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    }
+
+    .nav-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-primary);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .logo:hover {
+        color: var(--color-highlight);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+    }
+
+    .nav-links a {
+        color: var(--color-text-light);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease, transform 0.2s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--color-primary);
+        transform: translateY(-2px);
+    }
+
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .hamburger .bar {
+        width: 25px;
+        height: 3px;
+        background: var(--color-text-light);
+        margin: 3px 0;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 2rem;
+        background: var(--color-background-dark);
+        padding: 1rem;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px var(--color-shadow-dark);
+        animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .flash-messages {
+        max-width: 1200px;
+        margin: 1rem auto;
+        padding: 0 2rem;
+    }
+
+    .flash-message {
+        padding: 1rem;
+        margin-bottom: 0.5rem;
+        background: rgba(107, 72, 255, 0.1);
+        color: var(--color-primary);
+        border-left: 4px solid var(--color-primary);
+        border-radius: 5px;
+        text-align: center;
+        animation: slideIn 0.5s ease;
+    }
+
+    @keyframes slideIn {
+        from { transform: translateX(-100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+
+    .main-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .footer {
+        background: var(--color-background-dark);
+        color: var(--color-text-light);
+        padding: 2rem 0;
+        border-top: 2px solid var(--color-primary);
+        margin-top: 2rem;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        text-align: center;
+    }
+
+    .contact-info {
+        margin-bottom: 1rem;
+    }
+
+    .contact-info p {
+        margin: 0.5rem 0;
+        font-size: 0.9rem;
+    }
+
+    .contact-icon {
+        margin-right: 0.5rem;
+    }
+
+    .contact-info a {
+        color: var(--color-primary);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+        color: var(--color-highlight);
+    }
+
+    .copyright {
+        font-size: 0.8rem;
+        opacity: 0.7;
+        margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        .navbar {
+            padding: 1rem;
+        }
+        .nav-links {
+            display: none;
+        }
+        .hamburger {
+            display: flex;
+        }
+        .nav-links.active {
+            right: 1rem;
+            width: 150px;
+        }
+        .main-content {
+            padding: 1rem;
+        }
+        .footer-content {
+            padding: 0 1rem;
+        }
+        .contact-info p {
+            font-size: 0.85rem;
+        }
+    }
+</style>
