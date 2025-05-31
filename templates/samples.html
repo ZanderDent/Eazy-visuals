@@ -1,115 +1,430 @@
 {% extends "base.html" %}
 
-{% block title %}Gallery & Reviews - Honest Car Sales{% endblock %}
+{% block title %}Sample Work - Eazy Visuals{% endblock %}
 
 {% block extra_css %}
 <style>
-    .featured-video-section, .gallery-section, .testimonials-section {
-        margin-bottom: 3rem;
+    /* Define custom variables for Eazy's urban metallic vibe */
+    :root {
+        --color-background-dark: #1a1a1a; /* Matte black */
+        --color-primary: #6b48ff; /* Electric purple */
+        --color-highlight: #b0b7c0; /* Steel gray */
+        --color-text-light: #d1d5db; /* Light gray */
+        --color-shadow-dark: rgba(0, 0, 0, 0.7); /* Darker shadow */
+        --color-card-background-dark: #2d2d2d; /* Charcoal */
     }
-    .gallery-grid, .testimonials-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
-    .gallery-card, .testimonial-card {
-        background: white;
+    
+    body {
+        font-family: 'Montserrat', 'Roboto', sans-serif;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        min-height: 100vh;
+        line-height: 1.6;
+        color: var(--color-text-light);
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: var(--color-background-dark);
         border-radius: 15px;
+        box-shadow: 0 15px 30px var(--color-shadow-dark);
         overflow: hidden;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
-    .gallery-image {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
+    
+    .header {
+        background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+        color: var(--color-text-light);
+        padding: 30px 20px;
+        text-align: center;
     }
-    .gallery-info, .testimonial-info {
-        padding: 1.5rem;
+    
+    .header h1 {
+        font-size: 2rem;
+        margin-bottom: 8px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
     }
-    .gallery-title, .testimonial-title {
-        font-size: 1.3rem;
-        color: #2c3e50;
-        margin-bottom: 0.5rem;
+    
+    .header p {
+        font-size: 1rem;
+        opacity: 0.9;
     }
-    .gallery-description, .testimonial-text {
-        color: #7f8c8d;
+    
+    .content {
+        padding: 30px 20px;
+    }
+    
+    .section-header {
+        background: linear-gradient(135deg, #6b48ff 0%, #b0b7c0 100%);
+        color: var(--color-text-light);
+        padding: 20px;
+        margin: 20px 0 10px 0;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(107, 72, 255, 0.3);
+    }
+    
+    .section-header h2 {
+        font-size: 1.6rem;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+    }
+    
+    .section-header p {
+        opacity: 0.9;
         font-size: 0.9rem;
     }
-    .category-title {
-        color: #2c3e50;
-        margin-bottom: 1.5rem;
-        padding-bottom: 0.5rem;
-        border-bottom: 2px solid #3498db;
+    
+    .section-header.basketball {
+        background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
     }
-    .video-container {
+    
+    .section-header.creative {
+        background: linear-gradient(135deg, #6b48ff 0%, #2d2d2d 100%);
+    }
+    
+    /* Slideshow Container */
+    .slideshow-container {
         position: relative;
-        padding-bottom: 56.25%; /* 16:9 aspect ratio */
-        height: 0;
-        overflow: hidden;
-        border-radius: 15px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-    .video-container video {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
+        height: 40vh;
+        margin: 1rem 0;
+        overflow: hidden;
+        border-radius: 8px;
+        background: var(--color-card-background-dark);
+        box-shadow: 0 3px 15px var(--color-shadow-dark);
+    }
+    
+    .slideshow {
+        display: flex;
         height: 100%;
+        width: calc(8 * 100% / 4);
+        animation: scroll 30s linear infinite;
+    }
+    
+    .slideshow img {
+        height: 100%;
+        width: auto;
+        flex-shrink: 0;
+        object-fit: cover;
+        border-left: 3px solid var(--color-primary);
+        transition: transform 0.5s ease, border-color 0.3s ease;
+    }
+    
+    .slideshow img:hover {
+        transform: scale(1.05);
+        border-color: var(--color-highlight);
+    }
+    
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    
+    .slideshow-container:hover .slideshow {
+        animation-play-state: paused;
+    }
+    
+    /* Parallax Panels */
+    .parallax-panel {
+        height: 50vh;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    
+    .parallax-panel::before {
+        background: rgba(26, 26, 26, 0.6);
+    }
+    
+    .panel-content {
+        max-width: 600px;
+        padding: 0.5rem 1rem;
+    }
+    
+    .panel-content h2 {
+        font-size: 2rem;
+        letter-spacing: 1.5px;
+        margin-bottom: 0.3rem;
+        transform: translateX(-30px);
+        animation: slideInText 0.8s forwards 0.2s;
+    }
+    
+    .panel-content p {
+        font-size: 1rem;
+        margin-top: 0.3rem;
+        transform: translateX(30px);
+        animation: slideInText 0.8s forwards 0.4s;
+    }
+    
+    @keyframes slideInText {
+        to { transform: translateX(0); opacity: 1; }
+        from { transform: translateX(var(--start-offset, -30px)); opacity: 0; }
+    }
+    
+    /* Tilt Gallery */
+    .tilt-gallery {
+        gap: 10px;
+        margin: 1rem 0;
+    }
+    
+    .tilt-item {
+        width: 200px;
+        height: 250px;
+    }
+    
+    .tilt-item img {
+        border-radius: 8px;
+        border: 2px solid var(--color-primary);
+    }
+    
+    .tilt-item:hover img {
+        box-shadow: 0 6px 15px var(--color-shadow-dark);
+        transform: rotateX(6deg) rotateY(-6deg);
+    }
+    
+    .tilt-overlay {
+        border-radius: 0 0 8px 8px;
+    }
+    
+    .tilt-item:hover .tilt-overlay { height: 30px; }
+    .tilt-overlay span { font-size: 0.9rem; line-height: 30px; }
+    
+    /* Media Gallery for Videos */
+    .media-gallery {
+        padding: 20px;
+        margin-top: 20px;
+        background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%); /* Subtle gradient */
+        border: 1px solid var(--color-primary); /* Purple border */
+        border-radius: 8px;
+        box-shadow: 0 3px 10px var(--color-shadow-dark);
+        position: relative;
+    }
+    
+    .media-gallery h3 {
+        font-size: 1.2rem;
+        color: var(--color-highlight);
+        margin-bottom: 15px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 10px; /* Tighter gap */
+        justify-content: center;
+    }
+    
+    .gallery-item {
+        position: relative; /* For play button overlay */
+        background: var(--color-background-dark);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 3px 10px var(--color-shadow-dark);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .gallery-item:hover {
+        transform: translateY(-3px) scale(1.02); /* Slight scale on hover */
+        box-shadow: 0 6px 15px var(--color-shadow-dark), 0 0 10px rgba(107, 72, 255, 0.5); /* Purple glow */
+    }
+    
+    .gallery-item video {
+        width: 100%;
+        height: 160px; /* Slightly taller for better visibility */
+        display: block;
+        object-fit: cover;
+        border: 2px solid var(--color-primary); /* Purple border */
+        border-radius: 6px; /* Match item radius */
+        transition: border-color 0.3s ease;
+    }
+    
+    .gallery-item video:hover {
+        border-color: var(--color-highlight); /* Steel gray on hover */
+    }
+    
+    /* Play button overlay */
+    .gallery-item::before {
+        content: '▶';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        color: var(--color-primary);
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+        pointer-events: none; /* Prevent interaction */
+    }
+    
+    .gallery-item:hover::before {
+        opacity: 1;
+    }
+    
+    .gallery-item video[autoplay], .gallery-item video[playing] {
+        /* Hide play button when video is playing */
+        /* Note: [playing] is not a standard attribute but used here conceptually */
+        /* Use JS to add a class if needed for actual implementation */
+    }
+    
+    .gallery-item video[autoplay]::before,
+    .gallery-item video[playing]::before {
+        opacity: 0;
+    }
+    
+    .gallery-caption {
+        text-align: center;
+        padding: 8px;
+        font-size: 0.9rem; /* Slightly larger */
+        font-weight: 500;
+        color: var(--color-highlight); /* Steel gray */
+        background: rgba(26, 26, 26, 0.8); /* Subtle background */
+        border-radius: 0 0 8px 8px; /* Match item radius */
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    /* Mobile Adjustments */
+    @media (max-width: 768px) {
+        .header h1 { font-size: 1.5rem; }
+        .content { padding: 15px 10px; margin: 0 -10px; }
+        .container { border-radius: 0; box-shadow: none; padding: 0.5rem; max-width: 100%; }
+        .gallery-grid { grid-template-columns: 1fr; }
+        .gallery-item video { 
+            height: 140px; /* Adjusted for mobile */
+        }
+        .gallery-caption { 
+            font-size: 0.85rem; 
+            padding: 6px; 
+        }
+        .slideshow-container { height: 30vh; }
+        .parallax-panel { height: 40vh; }
+        .panel-content h2 { font-size: 1.5rem; }
+        .panel-content p { font-size: 0.9rem; }
+        .tilt-item { width: 150px; height: 200px; }
+        .tilt-item:hover .tilt-overlay { height: 25px; }
+        .tilt-overlay span { font-size: 0.8rem; line-height: 25px; }
     }
 </style>
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1 style="text-align: center; margin-bottom: 2rem; color: #2c3e50;">Gallery & Reviews</h1>
-
-    <div class="featured-video-section">
-        <h2 class="category-title">Featured Video</h2>
-        <div class="video-container">
-            <video controls>
-                <source src="{{ url_for('static', filename='videos/truck-sale-video.mp4') }}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+<div class="main-content">
+    <div class="container">
+        <div class="header">
+            <h2>Our Sample Work</h2>
+            <h1>Showcase</h1>
+            <p>Unleash your urban edge with our photoshoots and reels</p>
         </div>
-    </div>
-
-    <div class="gallery-section">
-        <h2 class="category-title">Vehicle Gallery</h2>
-        <div class="gallery-grid">
-            <div class="gallery-card">
-                <img src="{{ url_for('static', filename='placeholder-car.jpg') }}" alt="Vehicle" class="gallery-image">
-                <div class="gallery-info">
-                    <h3 class="gallery-title">2018 Ford F-150</h3>
-                    <p class="gallery-description">Low miles, government-maintained, ready for any job.</p>
+        
+        <div class="content">
+            <div class="section-header">
+                <h2>Promotional Photoshoots</h2>
+                <p>High-impact images for products and branding</p>
+            </div>
+            
+            <div class="slideshow-container">
+                <div class="slideshow">
+                    <img src="/static/promo-shoot-1.png" alt="Eazy Promo 1">
+                    <img src="/static/promo-shoot-2.png" alt="Eazy Promo 2">
+                    <img src="/static/promo-shoot-3.png" alt="Eazy Promo 3">
+                    <img src="/static/promo-shoot-4.jpeg" alt="Eazy Promo 4">
+                    <img src="/static/promo-shoot-1.png" alt="Eazy Promo 1">
+                    <img src="/static/promo-shoot-2.png" alt="Eazy Promo 2">
+                    <img src="/static/promo-shoot-3.png" alt="Eazy Promo 3">
+                    <img src="/static/promo-shoot-4.jpeg" alt="Eazy Promo 4">
                 </div>
             </div>
-            <div class="gallery-card">
-                <img src="{{ url_for('static', filename='placeholder-car.jpg') }}" alt="Vehicle" class="gallery-image">
-                <div class="gallery-info">
-                    <h3 class="gallery-title">2016 Chevy Silverado</h3>
-                    <p class="gallery-description">County-owned, fully serviced, built to last.</p>
+            
+            <section class="parallax-panel" style="background-image: url('/static/promo-shoot-4.jpeg');">
+                <div class="panel-content">
+                    <p>Urban. Raw. Unstoppable.</p>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="testimonials-section">
-        <h2 class="category-title">Customer Reviews</h2>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-info">
-                    <h3 class="testimonial-title">John D.</h3>
-                    <p class="testimonial-text">"Bought a 2017 Dodge Ram from HCS. Truck was in pristine condition, and the process was straightforward. Saved thousands compared to new!"</p>
+            </section>
+            
+            <section class="parallax-panel" style="background-image: url('/static/promo-shoot-2.png');">
+                <div class="panel-content">
+                    <h2>Streetwear Unleashed</h2>
+                    <p>Designed for the urban hustle.</p>
                 </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-info">
-                    <h3 class="testimonial-title">Sarah M.</h3>
-                    <p class="testimonial-text">"The team at HCS made buying my Ford Explorer a breeze. Transparent history and great service. Highly recommend!"</p>
+            </section>
+            
+            <section class="parallax-panel" style="background-image: url('/static/promo-shoot-3.png');">
+                <div class="panel-content">
+                    <h2>Concrete Legends</h2>
+                    <p>Eazy’s story is the city’s pulse.</p>
+                </div>
+            </section>
+            
+            <div class="media-gallery">
+                <h3>Video Samples</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <video controls>
+                            <source src="/static/social-media-reel-1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="gallery-caption">Eazy Reel 1</div>
+                    </div>
+                    <div class="gallery-item">
+                        <video controls>
+                            <source src="/static/social-media-reel-2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="gallery-caption">Eazy Reel 2</div>
+                    </div>
+                    <div class="gallery-item">
+                        <video controls>
+                            <source src="/static/social-media-reel-3.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="gallery-caption">Eazy Reel 3</div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    const triggers = document.querySelectorAll('.lightbox-trigger');
+    const overlay = document.getElementById('lightboxOverlay');
+    const lightboxImg = document.getElementById('lightboxImage');
+    const lightboxCap = document.getElementById('lightboxCaption');
+    const closeBtn = document.querySelector('.lightbox-close');
+    
+    triggers.forEach(img => {
+        img.addEventListener('click', () => {
+            const src = img.getAttribute('src');
+            const alt = img.getAttribute('alt') || '';
+            lightboxImg.setAttribute('src', src);
+            lightboxCap.innerText = alt;
+            overlay.style.display = 'flex';
+        });
+    });
+    
+    closeBtn.addEventListener('click', () => {
+        overlay.style.display = 'none';
+    });
+    
+    overlay.addEventListener('click', e => {
+        if (e.target === overlay) {
+            overlay.style.display = 'none';
+        }
+    });
+</script>
 {% endblock %}
