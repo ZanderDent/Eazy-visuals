@@ -54,7 +54,7 @@ body {
 
 /* Main content padding to clear fixed navbar */
 .main-content {
-    margin-top: 45px; /* Default margin for desktop */
+    margin-top: 50px; /* Default margin for desktop */
     padding: 2rem;
     margin-left: -30px;
     margin-right: -30px;
@@ -134,7 +134,8 @@ body {
     .nav-links a {
         padding: 1rem 0;
         border-bottom: 1px solid #eee;
-        text-align: center;
+        align-items: right;
+        margin-right: 20px;
     }
 
     .hamburger {
@@ -156,6 +157,9 @@ body {
     
     /* Adjust main content margin for mobile when navbar height changes */
     .main-content {
-        margin-top: 45px; /* Increased margin for mobile */
+        margin-top: 50px; /* Default margin for desktop */
+        padding: 2rem;
+        margin-left: -30px;
+        margin-right: -30px;
     }
 }

@@ -255,6 +255,61 @@
         margin-bottom: 8px;
     }
     
+    /* New Gallery Styles */
+    .media-gallery {
+        background: #f8f9fa;
+        border-radius: 15px;
+        padding: 30px;
+        margin-top: 30px;
+    }
+    
+    .media-gallery h3 {
+        font-size: 1.4rem;
+        color: #2c3e50;
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: 600;
+    }
+    
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        justify-content: center;
+    }
+    
+    .gallery-item {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover {
+        transform: translateY(-5px);
+    }
+    
+    .gallery-item img,
+    .gallery-item video {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+    
+    .gallery-item video {
+        max-height: 200px;
+    }
+    
+    .gallery-caption {
+        text-align: center;
+        padding: 10px;
+        color: #2c3e50;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+    
     @media (max-width: 768px) {
         .header h1 {
             font-size: 1.8rem;
@@ -266,6 +321,14 @@
         
         .pricing-grid {
             grid-template-columns: 1fr;
+        }
+        
+        .gallery-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .gallery-item video {
+            max-height: 150px;
         }
     }
 </style>
@@ -288,7 +351,7 @@
             </div>
         </div>
         
-        <!-- Hourly Services -->
+        <!-- Hourly Services (Unchanged) -->
         <div class="section-header">
             <h2>Hourly Services</h2>
             <p>Flexible rates for custom projects</p>
@@ -326,7 +389,7 @@
             </div>
         </div>
         
-        <!-- Basketball Services -->
+        <!-- Basketball Services (Updated Reel Lengths) -->
         <div class="section-header basketball">
             <h2>Basketball Videography</h2>
             <p>Game highlights, player reels & season packages</p>
@@ -341,7 +404,7 @@
                 </div>
                 <ul class="services-list">
                     <li>Focus on one specific player</li>
-                    <li>Player highlight reel (3-5 min)</li>
+                    <li>Player highlight reel (30s - 2 min)</li>
                     <li>1 revision included</li>
                     <li>Digital delivery (MP4)</li>
                     <li>1-2 week turnaround</li>
@@ -356,7 +419,7 @@
                 </div>
                 <ul class="services-list">
                     <li>Full team coverage</li>
-                    <li>Team highlight reel (4-6 min)</li>
+                    <li>Team highlight reel (2-5 min)</li>
                     <li>Best plays from all players</li>
                     <li>1 revision included</li>
                     <li>1-2 week turnaround</li>
@@ -372,7 +435,7 @@
                 <ul class="services-list">
                     <li>Multiple game attendance</li>
                     <li>Focus on specific player</li>
-                    <li>Compilation highlight reel (5-8 min)</li>
+                    <li>Compilation highlight reel (2-5 min)</li>
                     <li>Music & custom graphics</li>
                     <li>2 revisions included</li>
                     <li>Social media ready format</li>
@@ -467,7 +530,60 @@
             </div>
         </div>
         
-        <!-- Additional Services -->
+        <!-- Media Gallery for Creative Services -->
+        <div class="media-gallery">
+            <h3>Sample Work</h3>
+            <div class="gallery-grid">
+                <!-- Promotional Photos -->
+                <div class="gallery-item">
+                    <img src="/static/promo-shoot-1.png" alt="Promotional Photoshoot Sample 1">
+                    <div class="gallery-caption">Promotional Photoshoot 1</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/static/promo-shoot-2.png" alt="Promotional Photoshoot Sample 2">
+                    <div class="gallery-caption">Promotional Photoshoot 2</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/static/promo-shoot-3.png" alt="Promotional Photoshoot Sample 3">
+                    <div class="gallery-caption">Promotional Photoshoot 3</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/static/promo-shoot-4.jpeg" alt="Promotional Photoshoot Sample 4">
+                    <div class="gallery-caption">Promotional Photoshoot 4</div>
+                </div>
+                <!-- Social Media Reels -->
+                <div class="gallery-item">
+                    <video controls>
+                        <source src="/static/social-media-reel-1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="gallery-caption">Social Media Reel 1</div>
+                </div>
+                <div class="gallery-item">
+                    <video controls>
+                        <source src="/static/social-media-reel-2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="gallery-caption">Social Media Reel 2</div>
+                </div>
+                <div class="gallery-item">
+                    <video controls>
+                        <source src="/static/social-media-reel-3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="gallery-caption">Social Media Reel 3</div>
+                </div>
+                <div class="gallery-item">
+                    <video controls>
+                        <source src="/static/social-media-reel-4.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="gallery-caption">Social Media Reel 4</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Additional Services (Unchanged) -->
         <div class="additional-services">
             <h3 class="additional-title">Add-On Services</h3>
             <div class="services-grid">
@@ -498,7 +614,7 @@
             </div>
         </div>
         
-        <!-- Important Notes -->
+        <!-- Important Notes (Unchanged) -->
         <div class="notes">
             <h3>📝 Important Notes</h3>
             <ul>
